@@ -14,7 +14,9 @@ include ':libraries:FloatingButton'
 add a project in your dependency
 
 ```
+dependencies {
     compile project(':libraries:HQMobileOffers-Android')
+    }
 ```
 
 #Usage
