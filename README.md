@@ -3,9 +3,12 @@ The *HotelQuickly* Cordova wrapper for third party integration of mobile/webview
 
 ##Integration into an existing iOS project
 
-1) Download the project`HQMobileOffers-Android` ![alt tag]
+1) Download the project`HQMobileOffers-Android`
+
 2) Put it into your 'libraries' directory 
+
 3) If you are using Eclipse, just import this to your workspace and make it as your library project.
+
 4) If you are using Android Studio, include it in to your project in 'setting.gradle' file.
 
 ```
