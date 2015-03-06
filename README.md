@@ -35,11 +35,11 @@ Declar HqOfferActivity in your AndroidManifest file.
 <activity android:name="com.ionicframework.mo454237.HqOfferActivity" />
 ```
 
-To open the mobile just do a simple intent
+To open the mobile just create a simple intent
 
 ```
 Intent intent = new Intent(this,HqOfferActivity.class );
-intent.startActivity();
+startActivity(intent);
 ```
 
 
