@@ -18,7 +18,7 @@
     <author email="hi@ionicframework" href="http://ionicframework.com/">
       Ionic Framework Team
     </author>
-    <content src="http://mobile-offers.hotelquickly.com" />
+    <content src="https://mobile-offers.hotelquickly.com" />
     <access origin="*" />
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />
