@@ -192,10 +192,10 @@ public class CordovaWebView extends WebView {
         try {
             Method gingerbread_getMethod =  WebSettings.class.getMethod("setNavDump", new Class[] { boolean.class });
             
-            String manufacturer = Build.MANUFACTURER;
+            String manufacturer = android.os.Build.MANUFACTURER;
             Log.d(TAG, "CordovaWebView is running on device made by: " + manufacturer);
-            if(Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB &&
-                    Build.MANUFACTURER.contains("HTC"))
+            if(android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.HONEYCOMB &&
+                    android.os.Build.MANUFACTURER.contains("HTC"))
             {
                 gingerbread_getMethod.invoke(settings, true);
             }
@@ -215,7 +215,7 @@ public class CordovaWebView extends WebView {
         
         // Jellybean rightfully tried to lock this down. Too bad they didn't give us a whitelist
         // while we do this
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1)
+        if (android.os.Build.VERSION.SDK_INT > android.os.Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1)
             Level16Apis.enableUniversalAccess(settings);
         // Enable database
         // We keep this disabled because we use or shim to get around DOM_EXCEPTION_ERROR_16
@@ -227,7 +227,7 @@ public class CordovaWebView extends WebView {
         //Determine whether we're in debug or release mode, and turn on Debugging!
         ApplicationInfo appInfo = getContext().getApplicationContext().getApplicationInfo();
         if ((appInfo.flags & ApplicationInfo.FLAG_DEBUGGABLE) != 0 &&
-            Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
             enableRemoteDebugging();
         }
         
@@ -278,7 +278,7 @@ public class CordovaWebView extends WebView {
     }
 
     public CordovaWebViewClient makeWebViewClient(CordovaInterface cordova) {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
+        if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
             return new CordovaWebViewClient(cordova, this);
         }
         return new IceCreamCordovaWebViewClient(cordova, this);

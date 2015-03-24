@@ -43,7 +43,7 @@ public interface FrameReader extends Closeable {
      *     (highest) thru 2**31-1 (lowest).
      */
     void headers(boolean outFinished, boolean inFinished, int streamId, int associatedStreamId,
-                 int priority, List<String> nameValueBlock, HeadersMode headersMode);
+        int priority, List<String> nameValueBlock, HeadersMode headersMode);
     void rstStream(int streamId, ErrorCode errorCode);
     void settings(boolean clearPrevious, Settings settings);
     void noop();

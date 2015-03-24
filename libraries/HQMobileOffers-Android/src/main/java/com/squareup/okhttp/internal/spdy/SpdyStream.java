@@ -440,7 +440,7 @@ public final class SpdyStream {
 
     /**
      * Returns once the input stream is either readable or finished. Throws
-     * a {@link java.net.SocketTimeoutException} if the read timeout elapses before
+     * a {@link SocketTimeoutException} if the read timeout elapses before
      * that happens.
      */
     private void waitUntilReadable() throws IOException {
@@ -647,7 +647,7 @@ public final class SpdyStream {
     /**
      * Returns once the peer is ready to receive {@code count} bytes.
      *
-     * @throws java.io.IOException if the stream was finished or closed, or the
+     * @throws IOException if the stream was finished or closed, or the
      * thread was interrupted.
      */
     private void waitUntilWritable(int count, boolean last) throws IOException {

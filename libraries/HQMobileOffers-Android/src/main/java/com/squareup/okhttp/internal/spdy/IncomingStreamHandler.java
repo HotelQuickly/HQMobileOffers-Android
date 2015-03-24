@@ -28,8 +28,8 @@ public interface IncomingStreamHandler {
 
   /**
    * Handle a new stream from this connection's peer. Implementations should
-   * respond by either {@link com.squareup.okhttp.internal.spdy.SpdyStream#reply replying to the stream} or
-   * {@link com.squareup.okhttp.internal.spdy.SpdyStream#close closing it}. This response does not need to be
+   * respond by either {@link SpdyStream#reply replying to the stream} or
+   * {@link SpdyStream#close closing it}. This response does not need to be
    * synchronous.
    */
   void receive(SpdyStream stream) throws IOException;

@@ -19,7 +19,7 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 
 /**
- * Domain name service. Prefer this over {@link java.net.InetAddress#getAllByName} to
+ * Domain name service. Prefer this over {@link InetAddress#getAllByName} to
  * make code more testable.
  */
 public interface Dns {

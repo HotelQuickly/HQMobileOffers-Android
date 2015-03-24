@@ -28,7 +28,7 @@ public interface FrameWriter extends Closeable {
   /** SPDY/3 only. */
   void flush() throws IOException;
   void synStream(boolean outFinished, boolean inFinished, int streamId, int associatedStreamId,
-                 int priority, int slot, List<String> nameValueBlock) throws IOException;
+      int priority, int slot, List<String> nameValueBlock) throws IOException;
   void synReply(boolean outFinished, int streamId, List<String> nameValueBlock) throws IOException;
   void headers(int streamId, List<String> nameValueBlock) throws IOException;
   void rstStream(int streamId, ErrorCode errorCode) throws IOException;

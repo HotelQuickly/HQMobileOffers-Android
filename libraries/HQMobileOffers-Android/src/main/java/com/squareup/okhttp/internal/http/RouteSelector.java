@@ -100,7 +100,7 @@ public final class RouteSelector {
   /**
    * Returns the next route address to attempt.
    *
-   * @throws java.util.NoSuchElementException if there are no more routes to attempt.
+   * @throws NoSuchElementException if there are no more routes to attempt.
    */
   public Connection next(String method) throws IOException {
     // Always prefer pooled connections over new connections.

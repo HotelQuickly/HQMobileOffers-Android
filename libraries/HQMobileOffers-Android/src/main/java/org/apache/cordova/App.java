@@ -128,7 +128,7 @@ public class App extends CordovaPlugin {
      *
      * @param url
      * @param props			Properties that can be passed in to the Cordova activity (i.e. loadingDialog, wait, ...)
-     * @throws org.json.JSONException
+     * @throws JSONException
      */
     public void loadUrl(String url, JSONObject props) throws JSONException {
         LOG.d("App", "App.loadUrl("+url+","+props+")");

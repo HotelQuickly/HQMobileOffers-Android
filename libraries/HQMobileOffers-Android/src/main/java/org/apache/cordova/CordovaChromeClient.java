@@ -52,7 +52,7 @@ import android.widget.RelativeLayout;
  * @see <a href="http://developer.android.com/reference/android/webkit/WebChromeClient.html">WebChromeClient</a>
  * @see <a href="http://developer.android.com/guide/webapps/webview.html">WebView guide</a>
  * @see CordovaWebViewClient
- * @see org.apache.cordova.CordovaWebView
+ * @see CordovaWebView
  */
 public class CordovaChromeClient extends WebChromeClient {
 
@@ -269,7 +269,7 @@ public class CordovaChromeClient extends WebChromeClient {
     
     // API level 7 is required for this, see if we could lower this using something else
     @Override
-    public void onShowCustomView(View view, CustomViewCallback callback) {
+    public void onShowCustomView(View view, WebChromeClient.CustomViewCallback callback) {
         this.appView.showCustomView(view, callback);
     }
 

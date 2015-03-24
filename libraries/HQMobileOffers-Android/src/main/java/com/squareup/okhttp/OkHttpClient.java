@@ -70,7 +70,7 @@ public final class OkHttpClient implements URLStreamHandlerFactory {
   /**
    * Sets the default connect timeout for new connections. A value of 0 means no timeout.
    *
-   * @see java.net.URLConnection#setConnectTimeout(int)
+   * @see URLConnection#setConnectTimeout(int)
    */
   public void setConnectTimeout(long timeout, TimeUnit unit) {
     if (timeout < 0) {
@@ -94,7 +94,7 @@ public final class OkHttpClient implements URLStreamHandlerFactory {
   /**
    * Sets the default read timeout for new connections. A value of 0 means no timeout.
    *
-   * @see java.net.URLConnection#setReadTimeout(int)
+   * @see URLConnection#setReadTimeout(int)
    */
   public void setReadTimeout(long timeout, TimeUnit unit) {
     if (timeout < 0) {
@@ -136,7 +136,7 @@ public final class OkHttpClient implements URLStreamHandlerFactory {
    * in that case they will be tried in sequence until a successful connection
    * is established.
    *
-   * <p>If unset, the {@link java.net.ProxySelector#getDefault() system-wide default}
+   * <p>If unset, the {@link ProxySelector#getDefault() system-wide default}
    * proxy selector will be used.
    */
   public OkHttpClient setProxySelector(ProxySelector proxySelector) {
@@ -152,7 +152,7 @@ public final class OkHttpClient implements URLStreamHandlerFactory {
    * Sets the cookie handler to be used to read outgoing cookies and write
    * incoming cookies.
    *
-   * <p>If unset, the {@link java.net.CookieHandler#getDefault() system-wide default}
+   * <p>If unset, the {@link CookieHandler#getDefault() system-wide default}
    * cookie handler will be used.
    */
   public OkHttpClient setCookieHandler(CookieHandler cookieHandler) {
@@ -167,7 +167,7 @@ public final class OkHttpClient implements URLStreamHandlerFactory {
   /**
    * Sets the response cache to be used to read and write cached responses.
    *
-   * <p>If unset, the {@link java.net.ResponseCache#getDefault() system-wide default}
+   * <p>If unset, the {@link ResponseCache#getDefault() system-wide default}
    * response cache will be used.
    */
   public OkHttpClient setResponseCache(ResponseCache responseCache) {
@@ -192,7 +192,7 @@ public final class OkHttpClient implements URLStreamHandlerFactory {
   /**
    * Sets the socket factory used to secure HTTPS connections.
    *
-   * <p>If unset, the {@link javax.net.ssl.HttpsURLConnection#getDefaultSSLSocketFactory()
+   * <p>If unset, the {@link HttpsURLConnection#getDefaultSSLSocketFactory()
    * system-wide default} SSL socket factory will be used.
    */
   public OkHttpClient setSslSocketFactory(SSLSocketFactory sslSocketFactory) {
@@ -208,7 +208,7 @@ public final class OkHttpClient implements URLStreamHandlerFactory {
    * Sets the verifier used to confirm that response certificates apply to
    * requested hostnames for HTTPS connections.
    *
-   * <p>If unset, the {@link javax.net.ssl.HttpsURLConnection#getDefaultHostnameVerifier()
+   * <p>If unset, the {@link HttpsURLConnection#getDefaultHostnameVerifier()
    * system-wide default} hostname verifier will be used.
    */
   public OkHttpClient setHostnameVerifier(HostnameVerifier hostnameVerifier) {
@@ -377,10 +377,10 @@ public final class OkHttpClient implements URLStreamHandlerFactory {
   }
 
   /**
-   * Creates a URLStreamHandler as a {@link java.net.URL#setURLStreamHandlerFactory}.
+   * Creates a URLStreamHandler as a {@link URL#setURLStreamHandlerFactory}.
    *
    * <p>This code configures OkHttp to handle all HTTP and HTTPS connections
-   * created with {@link java.net.URL#openConnection()}: <pre>   {@code
+   * created with {@link URL#openConnection()}: <pre>   {@code
    *
    *   OkHttpClient okHttpClient = new OkHttpClient();
    *   URL.setURLStreamHandlerFactory(okHttpClient);

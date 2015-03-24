@@ -42,7 +42,7 @@ public class Route {
   }
 
   /**
-   * Returns the {@link java.net.Proxy} of this route.
+   * Returns the {@link Proxy} of this route.
    *
    * <strong>Warning:</strong> This may be different than the proxy returned
    * by {@link #getAddress}! That is the proxy that the user asked to be
@@ -54,7 +54,7 @@ public class Route {
     return proxy;
   }
 
-  /** Returns the {@link java.net.InetSocketAddress} of this route. */
+  /** Returns the {@link InetSocketAddress} of this route. */
   public InetSocketAddress getSocketAddress() {
     return inetSocketAddress;
   }

@@ -29,7 +29,7 @@ import static com.squareup.okhttp.internal.Util.checkOffsetAndCount;
  * attempted.
  *
  * <p>Subclasses must override {@link #replacementStream} which will request a
- * replacement stream each time an {@link java.io.IOException} is encountered on the
+ * replacement stream each time an {@link IOException} is encountered on the
  * current stream.
  */
 public abstract class FaultRecoveringOutputStream extends AbstractOutputStream {

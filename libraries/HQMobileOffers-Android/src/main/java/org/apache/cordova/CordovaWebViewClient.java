@@ -47,8 +47,8 @@ import android.webkit.WebViewClient;
  *
  * @see <a href="http://developer.android.com/reference/android/webkit/WebViewClient.html">WebViewClient</a>
  * @see <a href="http://developer.android.com/guide/webapps/webview.html">WebView guide</a>
- * @see org.apache.cordova.CordovaChromeClient
- * @see org.apache.cordova.CordovaWebView
+ * @see CordovaChromeClient
+ * @see CordovaWebView
  */
 public class CordovaWebViewClient extends WebViewClient {
 

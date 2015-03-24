@@ -31,8 +31,8 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Manages reuse of HTTP and SPDY connections for reduced network latency. HTTP
- * requests that share the same {@link Address} may share a
- * {@link Connection}. This class implements the policy of
+ * requests that share the same {@link com.squareup.okhttp.Address} may share a
+ * {@link com.squareup.okhttp.Connection}. This class implements the policy of
  * which connections to keep open for future use.
  *
  * <p>The {@link #getDefault() system-wide default} uses system properties for

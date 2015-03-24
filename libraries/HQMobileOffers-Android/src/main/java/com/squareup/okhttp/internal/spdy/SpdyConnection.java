@@ -102,7 +102,7 @@ public final class SpdyConnection implements Closeable {
   }
 
   /**
-   * Returns the number of {@link com.squareup.okhttp.internal.spdy.SpdyStream#isOpen() open streams} on this
+   * Returns the number of {@link SpdyStream#isOpen() open streams} on this
    * connection.
    */
   public synchronized int openStreamCount() {
@@ -356,7 +356,7 @@ public final class SpdyConnection implements Closeable {
 
   /**
    * Sends a connection header if the current variant requires it. This should
-   * be called after {@link com.squareup.okhttp.internal.spdy.SpdyConnection.Builder#build} for all new connections.
+   * be called after {@link Builder#build} for all new connections.
    */
   public void sendConnectionHeader() throws IOException {
     frameWriter.connectionHeader();
@@ -365,7 +365,7 @@ public final class SpdyConnection implements Closeable {
 
   /**
    * Reads a connection header if the current variant requires it. This should
-   * be called after {@link com.squareup.okhttp.internal.spdy.SpdyConnection.Builder#build} for all new connections.
+   * be called after {@link Builder#build} for all new connections.
    */
   public void readConnectionHeader() throws IOException {
     frameReader.readConnectionHeader();

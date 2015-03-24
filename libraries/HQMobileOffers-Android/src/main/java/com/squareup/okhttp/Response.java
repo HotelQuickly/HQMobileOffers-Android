@@ -129,7 +129,7 @@ import static com.squareup.okhttp.internal.Util.UTF_8;
      *
      * <p>Clients with many concurrent downloads can use this method to reduce
      * the number of idle threads blocking on reads. See {@link
-     * com.squareup.okhttp.Response.Receiver#onResponse} for details.
+     * Receiver#onResponse} for details.
      */
     // <h3>Body.ready() vs. InputStream.available()</h3>
     // TODO: Can we fix response bodies to implement InputStream.available well?
@@ -215,7 +215,7 @@ import static com.squareup.okhttp.internal.Util.UTF_8;
      *
      * <p>Receivers do not need to block while waiting for the response body to
      * download. Instead, they can get called back as data arrives. Use {@link
-     * com.squareup.okhttp.Response.Body#ready} to check if bytes should be read immediately. While there is
+     * Body#ready} to check if bytes should be read immediately. While there is
      * data ready, read it. If there isn't, return false: receivers will be
      * called back with {@code onResponse()} as additional data is downloaded.
      *
@@ -226,7 +226,7 @@ import static com.squareup.okhttp.internal.Util.UTF_8;
      * <p>When the response body has been fully consumed the returned value is
      * undefined.
      *
-     * <p>The current implementation of {@link com.squareup.okhttp.Response.Body#ready} always returns true
+     * <p>The current implementation of {@link Body#ready} always returns true
      * when the underlying transport is HTTP/1. This results in blocking on that
      * transport. For effective non-blocking your server must support SPDY or
      * HTTP/2.
