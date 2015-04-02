@@ -12,7 +12,7 @@ The *HotelQuickly* Cordova wrapper for third party integration of mobile/webview
 4) If you are using Android Studio, include it in to your project in 'setting.gradle' file.
 
 ```
-include ':libraries:FloatingButton'
+include ':libraries:HQMobileOffers-Android'
 ```
 add a project in your dependency
 
