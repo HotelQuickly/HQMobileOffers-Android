@@ -19,7 +19,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.ionicframework.mo454237.HqOfferActivity" />
+        <activity android:name="com.ionicframework.mo454237.HqOfferActivity"
+                  android:screenOrientation="portrait"/>
 
     </application>
 
