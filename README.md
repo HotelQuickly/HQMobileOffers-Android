@@ -29,10 +29,12 @@ To use this, make sure that your project has internet permission.
 <uses-permission android:name="android.permission.INTERNET"/>
 ```
 
-Declar HqOfferActivity in your AndroidManifest file.
+Declar HqOfferActivity in your AndroidManifest file. 
+*Please know that we only support the MobileOffers in portrait orientation. So keep it be in portrait.
 
 ```
-<activity android:name="com.ionicframework.mo454237.HqOfferActivity" />
+<activity android:name="com.ionicframework.mo454237.HqOfferActivity"
+          android:screenOrientation="portrait"/>
 ```
 
 To open the mobile just create a simple intent
