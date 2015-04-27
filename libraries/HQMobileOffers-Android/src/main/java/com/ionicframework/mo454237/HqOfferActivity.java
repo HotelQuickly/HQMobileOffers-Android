@@ -19,7 +19,11 @@
 
 package com.ionicframework.mo454237;
 
+import android.location.Location;
 import android.os.Bundle;
+
+import com.hotelquickly.app.LocationService;
+
 import org.apache.cordova.*;
 
 public class HqOfferActivity extends CordovaActivity
@@ -33,8 +37,28 @@ public class HqOfferActivity extends CordovaActivity
         if (savedInstanceState != null) {
            appView.restoreState(savedInstanceState);
         } else {
-            // Set by <content src="index.html" /> in config.xml
-            loadUrl(launchUrl);
+
+
+            if(LocationService.isAvaliable(this)) {
+                LocationService locationService = new LocationService(getApplicationContext());
+                locationService.getLastLocation(new LocationService.LastLocationEvent() {
+                    @Override
+                    public void onAcquired(Location location) {
+                        //launchUrl was Set by <content src="index.html" /> in config.xml
+                        loadUrl(launchUrl + "?latitude=" + String.valueOf(location.getLatitude()) + "&longitude=" + String.valueOf(location.getLongitude()));
+                    }
+
+                    @Override
+                    public void onFailed() {
+                        //launchUrl was Set by <content src="index.html" /> in config.xml
+                        loadUrl(launchUrl);
+                    }
+                });
+            } else {
+                //launchUrl was Set by <content src="index.html" /> in config.xml
+                loadUrl(launchUrl);
+            }
+
         }
 
     }
