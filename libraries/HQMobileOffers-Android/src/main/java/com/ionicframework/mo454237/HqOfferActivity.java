@@ -23,7 +23,7 @@ import android.location.Location;
 import android.os.Bundle;
 
 import com.hotelquickly.app.Constants;
-import com.hotelquickly.app.LocationService;
+import com.hotelquickly.app.util.LocationService;
 
 import org.apache.cordova.*;
 

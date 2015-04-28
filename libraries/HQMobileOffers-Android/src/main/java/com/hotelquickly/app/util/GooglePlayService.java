@@ -1,4 +1,4 @@
-package com.hotelquickly.app;
+package com.hotelquickly.app.util;
 
 import android.content.Context;
 

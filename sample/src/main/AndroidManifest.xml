@@ -31,8 +31,7 @@
         <activity android:name="com.ionicframework.mo454237.HqOfferActivity"
                   android:screenOrientation="portrait"/>
 
-        <activity android:name="com.hotelquickly.app.ui.activity.AndroidWebViewActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
+        <activity android:name=".AndroidWebViewActivity"
             android:screenOrientation="portrait"/>
 
 
