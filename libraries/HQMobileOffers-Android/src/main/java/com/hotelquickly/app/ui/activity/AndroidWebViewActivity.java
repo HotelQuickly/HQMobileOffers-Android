@@ -5,8 +5,12 @@ import android.content.Context;
 import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.webkit.ConsoleMessage;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import com.hotelquickly.app.Constants;
 import com.hotelquickly.app.LocationService;
@@ -79,6 +83,16 @@ public class AndroidWebViewActivity extends Activity {
         mWebView.setBackgroundColor(0x00000000);
         mWebView.getSettings().setDatabaseEnabled(true);
         mWebView.getSettings().setDomStorageEnabled(true);
+        mWebView.getSettings().setJavaScriptEnabled(true);
+        mWebView.setWebViewClient(new WebViewClient());
+        mWebView.setWebChromeClient(new WebChromeClient() {
+            public boolean onConsoleMessage(ConsoleMessage cm) {
+                Log.d("MobileOffers", cm.message() + " -- From line "
+                        + cm.lineNumber() + " of "
+                        + cm.sourceId());
+                return true;
+            }
+        });
 
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
             String databasePath = this.getApplicationContext().getDir("database", Context.MODE_PRIVATE).getPath();
