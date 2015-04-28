@@ -6,6 +6,12 @@ package com.hotelquickly.app;
 public class Constants {
 
     public static class URL {
-        public static String MOBILE_OFFERS = "https://mobile-offers-staging.hotelquickly.com";
+        public final static String MOBILE_OFFERS = "https://mobile-offers-staging.hotelquickly.com";
+    }
+
+    public static class Params {
+        public final static String LATITUDE = "latitude";
+        public final static String LONGITUDE = "longitude";
+        public final static String LANGUAGE = "language";
     }
 }

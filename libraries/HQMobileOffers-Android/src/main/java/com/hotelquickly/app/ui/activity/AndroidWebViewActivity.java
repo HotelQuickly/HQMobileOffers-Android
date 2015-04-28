@@ -19,6 +19,8 @@ import junit.framework.Assert;
 
 import org.apache.cordova.R;
 
+import java.util.Locale;
+
 /**
  * Created by hqadmin on 4/27/15.
  */
@@ -44,6 +46,9 @@ public class AndroidWebViewActivity extends Activity {
 
         initWebView();
 
+        Locale current = getResources().getConfiguration().locale;
+        final String language = current.getLanguage();
+
         if (savedInstanceState != null) {
             mWebView.restoreState(savedInstanceState);
         }else {
@@ -53,19 +58,24 @@ public class AndroidWebViewActivity extends Activity {
                     @Override
                     public void onAcquired(Location location) {
                         mWebView.loadUrl(Constants.URL.MOBILE_OFFERS
-                                + "?latitude="
+                                + "?" + Constants.Params.LATITUDE + "="
                                 + String.valueOf(location.getLatitude())
-                                + "&longitude="
-                                + String.valueOf(location.getLongitude()));
+                                + "&" + Constants.Params.LONGITUDE + "="
+                                + String.valueOf(location.getLongitude())
+                                + "&" + Constants.Params.LANGUAGE + "="
+                                + language);
                     }
 
                     @Override
                     public void onFailed() {
-                        mWebView.loadUrl(Constants.URL.MOBILE_OFFERS);
+                        mWebView.loadUrl(Constants.URL.MOBILE_OFFERS+ "?" + Constants.Params.LANGUAGE + "="
+                                + language);
                     }
                 });
             } else {
-                mWebView.loadUrl(Constants.URL.MOBILE_OFFERS);
+                mWebView.loadUrl(Constants.URL.MOBILE_OFFERS
+                        + "?" + Constants.Params.LANGUAGE + "="
+                        + language);
             }
         }
     }

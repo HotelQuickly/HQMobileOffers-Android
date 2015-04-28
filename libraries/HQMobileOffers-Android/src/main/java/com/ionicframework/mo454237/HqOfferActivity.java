@@ -22,9 +22,12 @@ package com.ionicframework.mo454237;
 import android.location.Location;
 import android.os.Bundle;
 
+import com.hotelquickly.app.Constants;
 import com.hotelquickly.app.LocationService;
 
 import org.apache.cordova.*;
+
+import java.util.Locale;
 
 public class HqOfferActivity extends CordovaActivity
 {
@@ -33,6 +36,10 @@ public class HqOfferActivity extends CordovaActivity
     {
         super.onCreate(savedInstanceState);
         super.init();
+
+        Locale current = getResources().getConfiguration().locale;
+        final String language = current.getLanguage();
+
 
         if (savedInstanceState != null) {
            appView.restoreState(savedInstanceState);
@@ -45,18 +52,26 @@ public class HqOfferActivity extends CordovaActivity
                     @Override
                     public void onAcquired(Location location) {
                         //launchUrl was Set by <content src="index.html" /> in config.xml
-                        loadUrl(launchUrl + "?latitude=" + String.valueOf(location.getLatitude()) + "&longitude=" + String.valueOf(location.getLongitude()));
+                        loadUrl(Constants.URL.MOBILE_OFFERS
+                                + "?" + Constants.Params.LATITUDE + "="
+                                + String.valueOf(location.getLatitude())
+                                + "&" + Constants.Params.LONGITUDE + "="
+                                + String.valueOf(location.getLongitude())
+                                + "&" + Constants.Params.LANGUAGE + "="
+                                + language);
                     }
 
                     @Override
                     public void onFailed() {
                         //launchUrl was Set by <content src="index.html" /> in config.xml
-                        loadUrl(launchUrl);
+                        loadUrl(Constants.URL.MOBILE_OFFERS+ "?" + Constants.Params.LANGUAGE + "="
+                                + language);
                     }
                 });
             } else {
                 //launchUrl was Set by <content src="index.html" /> in config.xml
-                loadUrl(launchUrl);
+                loadUrl(Constants.URL.MOBILE_OFFERS+ "?" + Constants.Params.LANGUAGE + "="
+                        + language);
             }
 
         }
