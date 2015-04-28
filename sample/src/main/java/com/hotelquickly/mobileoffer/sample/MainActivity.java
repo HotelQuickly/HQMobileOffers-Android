@@ -5,6 +5,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ToggleButton;
 
 
@@ -14,7 +15,7 @@ import junit.framework.Assert;
 public class MainActivity extends ActionBarActivity implements View.OnClickListener{
 
 
-    private  ToggleButton mToggleButton;
+    private CheckBox mCheckBox;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,15 +27,15 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         Assert.assertNotNull(androidWebViewBtn);
         androidWebViewBtn.setOnClickListener(this);
 
-        mToggleButton = (ToggleButton) findViewById(R.id.toggleButton);
-        Assert.assertNotNull(mToggleButton);
+        mCheckBox = (CheckBox) findViewById(R.id.toggleButton);
+        Assert.assertNotNull(mCheckBox);
     }
 
     @Override
     public void onClick(View v) {
          if(v.getId() == R.id.webviewbutton){
             Intent intent = new Intent(this, AndroidWebViewActivity.class );
-             intent.putExtra(AndroidWebViewActivity.HIDE_TOOLBAR, mToggleButton.isChecked());
+             intent.putExtra(AndroidWebViewActivity.HIDE_TOOLBAR, mCheckBox.isChecked());
             startActivity(intent);
         }
     }
