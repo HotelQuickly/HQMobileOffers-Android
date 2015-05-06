@@ -19,6 +19,8 @@ import junit.framework.Assert;
 public class AndroidWebViewActivity extends ActionBarActivity {
 
     public static final String HIDE_TOOLBAR = "HideToolBar";
+    private static final String API_KEY = "ADD_YOUR_API_KEY_HERE";
+
     private HQMobileOffersLoader mOfferLoader;
 
     @Override
@@ -36,7 +38,7 @@ public class AndroidWebViewActivity extends ActionBarActivity {
 
         Assert.assertNotNull(webView);
 
-        mOfferLoader = new HQMobileOffersLoader(this, webView);
+        mOfferLoader = new HQMobileOffersLoader(this, webView, API_KEY);
 
         if (savedInstanceState != null) {
             mOfferLoader.restoreState(savedInstanceState);

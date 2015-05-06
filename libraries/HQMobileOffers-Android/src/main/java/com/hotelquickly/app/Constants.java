@@ -13,5 +13,6 @@ public class Constants {
         public final static String LATITUDE = "latitude";
         public final static String LONGITUDE = "longitude";
         public final static String LANGUAGE = "language";
+        public final static String API_KEY = "apiKey";
     }
 }

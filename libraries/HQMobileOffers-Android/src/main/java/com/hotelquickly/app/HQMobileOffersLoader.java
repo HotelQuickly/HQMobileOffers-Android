@@ -28,10 +28,12 @@ public class HQMobileOffersLoader {
 
     private WebView mWebView;
     private Context mContext;
+    private String mApiKey;
 
-    public HQMobileOffersLoader(Context context, WebView webView){
+    public HQMobileOffersLoader(Context context, WebView webView, String apiKey){
         mContext = context;
         mWebView = webView;
+        mApiKey = apiKey;
         setUp();
     }
 
@@ -79,19 +81,25 @@ public class HQMobileOffersLoader {
                             + "&" + Constants.Params.LONGITUDE + "="
                             + String.valueOf(location.getLongitude())
                             + "&" + Constants.Params.LANGUAGE + "="
-                            + language);
+                            + language
+                            + "&" + Constants.Params.API_KEY + "="
+                            + mApiKey);
                 }
 
                 @Override
                 public void onFailed() {
                     mWebView.loadUrl(Constants.URL.MOBILE_OFFERS+ "?" + Constants.Params.LANGUAGE + "="
-                            + language);
+                            + language
+                            + "&" + Constants.Params.API_KEY + "="
+                                    + mApiKey);
                 }
             });
         } else {
             mWebView.loadUrl(Constants.URL.MOBILE_OFFERS
                     + "?" + Constants.Params.LANGUAGE + "="
-                    + language);
+                    + language
+                    +  "&" + Constants.Params.API_KEY + "="
+                    + mApiKey);
         }
     }
 
