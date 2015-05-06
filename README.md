@@ -37,11 +37,50 @@ Declar HqOfferActivity in your AndroidManifest file.
           android:screenOrientation="portrait"/>
 ```
 
-To open the mobile just create a simple intent
+To open the HQMobileOffers you an simply create an Activity
+
+which have a webview component inside.
+```
+<?xml version="1.0" encoding="utf-8"?>
+<WebView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/webview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+</WebView>
+```
+
+And simply bind it
+```
+WebView webView = (WebView) findViewById(R.id.webview);
+```
+
+
+Then you can call HQMobileOffersLoader to auto render the mobile Offer by passing the context, webview and your api key
 
 ```
-Intent intent = new Intent(this,HqOfferActivity.class );
-startActivity(intent);
+offerLoader = new HQMobileOffersLoader(this, webView, API_KEY);
+offerLoader.load();
 ```
 
+To handle the canGoBack(), goBack() and restoreState() webview methods you can just call OfferLoader.canGoBack() instead.
 
+```
+ @Override
+    public void onBackPressed() {
+
+        if(mOfferLoader.canGoBack()){
+            mOfferLoader.goBack();
+        }else{
+            super.onBackPressed();
+        }
+    }
+```
+
+```
+if (savedInstanceState != null) {
+            mOfferLoader.restoreState(savedInstanceState);
+        }else {
+            mOfferLoader.load();
+        }
+```

@@ -57,6 +57,5 @@ public class AndroidWebViewActivity extends ActionBarActivity {
         }else{
             super.onBackPressed();
         }
-
     }
 }

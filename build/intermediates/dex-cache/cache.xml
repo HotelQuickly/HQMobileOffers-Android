@@ -2,18 +2,18 @@
 <items version="2" >
 
     <item
-        jar="/home/hqadmin/Documents/HQMobileOffers-Android/sample/build/intermediates/exploded-aar/HQMobileOffers-Android.libraries/HQMobileOffers-Android/unspecified/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="3973aeaf422a25ef98b3fcfb56eaf1b0b55bedfd">
-        <dex dex="/home/hqadmin/Documents/HQMobileOffers-Android/sample/build/intermediates/pre-dexed/debug/classes-7115f30628caa43bdf8028c9dc59807aacd5faee.jar" />
-    </item>
-    <item
         jar="/home/hqadmin/Documents/HQMobileOffers-Android/sample/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
         <dex dex="/home/hqadmin/Documents/HQMobileOffers-Android/sample/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-8e592b5803f077ba5bae3c56880d5a284d7e4210.jar" />
+    </item>
+    <item
+        jar="/home/hqadmin/Documents/HQMobileOffers-Android/sample/build/intermediates/exploded-aar/HQMobileOffers-Android.libraries/HQMobileOffers-Android/unspecified/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="111e981c7f1ea3a330c327592ecd3119c920d530">
+        <dex dex="/home/hqadmin/Documents/HQMobileOffers-Android/sample/build/intermediates/pre-dexed/debug/classes-7115f30628caa43bdf8028c9dc59807aacd5faee.jar" />
     </item>
     <item
         jar="/home/hqadmin/Documents/HQMobileOffers-Android/sample/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.1.11/classes.jar"
